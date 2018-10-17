@@ -1,3 +1,26 @@
+--[[
+	_______________________________
+	DEVASTATING BLOW - OFF-HOST FIX
+	¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+	
+	 v. 1.0
+
+	Written by Zeropathic
+	
+	
+	
+	What this mod does:
+	¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+	
+	Devastating Blow doesn't only increase your push strength; it also increases the stagger strength of your weapon's attacks.
+	
+	Normally, this secondary effect only works if you're the host. This mod aims to fix this bug for clients connected to you.
+	
+	NOTE: Only the host needs to have this mod installed. It does (or at least should do) nothing if installed on clients.
+	
+--]]
+
+
 local mod = get_mod("DevBlowFix")
 
 
