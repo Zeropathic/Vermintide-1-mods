@@ -1,10 +1,5 @@
 local mod = get_mod("DevBlowFix")
 
--- Everything here is optional, feel free to remove anything you're not using
-
---[[
-	Functions
---]]
 
 --
 -- This function checks the unit's currently held item and sees if devastating blow is on it.
@@ -30,12 +25,9 @@ end
 --
 
 
---[[
-	Hooks
---]]
-
 --
 -- I hook the function responsible for calculating stagger, then run a modified version of it instead.
+-- This function runs host-side when an attack connects with an enemy. Stagger is then calculated based on various factors.
 mod:hook(DamageUtils, "calculate_stagger", function(func, damage_table, duration_table, target_unit, attacker_unit, attack_template)
 
 	-- If this mod is disabled, run the normal function instead.
