@@ -1,0 +1,11 @@
+mod = [
+	"DevBlowFix"
+]
+
+package = [
+	"resource_packages/DevBlowFix/DevBlowFix"
+]
+
+lua = [
+	"scripts/mods/DevBlowFix/*"
+]
