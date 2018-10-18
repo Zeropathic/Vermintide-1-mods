@@ -3,7 +3,7 @@
 	DEVASTATING BLOW - OFF-HOST FIX
 	¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
 	
-	 v. 1.0
+	 v. 1.1
 
 	Written by Zeropathic
 	
@@ -51,13 +51,7 @@ end
 --
 -- I hook the function responsible for calculating stagger, then run a modified version of it instead.
 -- This function runs host-side when an attack connects with an enemy. Stagger is then calculated based on various factors.
-mod:hook(DamageUtils, "calculate_stagger", function(func, damage_table, duration_table, target_unit, attacker_unit, attack_template)
-
-	-- If this mod is disabled, run the normal function instead.
-	if not mod:is_enabled() then
-		return func(damage_table, duration_table, target_unit, attacker_unit, attack_template)
-	end
-	
+mod:hook_origin(DamageUtils, "calculate_stagger", function(damage_table, duration_table, target_unit, attacker_unit, attack_template)
 	local breed = Unit.get_data(target_unit, "breed")
 	local target_unit_armor = breed.armor_category
 	local stagger = 0
