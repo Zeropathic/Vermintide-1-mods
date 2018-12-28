@@ -3,7 +3,7 @@
 	DEVASTATING BLOW - OFF-HOST FIX
 	¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
 	
-	 v. 1.2
+	 v. 1.2.1
 
 	Written by Zeropathic
 	
@@ -35,7 +35,7 @@ local function hasDevBlow(attacker_unit)
 	local item_key = slot_data and slot_data.item_data.key
 	local item = item_key and ItemMasterList[item_key]
 	
-	if item.traits then -- In rare situations this seems to be 'nil', which would crash the game if I tried to use it.
+	if item and item.traits then -- Ogres can trigger this function. This check keeps them out. It would crash because they don't have item data.
 		for _, trait_name in ipairs(item.traits) do
 			if trait_name == "melee_weapon_push_increase" then
 				-- Currently returns 'true' even if the trait hasn't been unlocked. Would be nice to fix it, but it's not very high priority.
